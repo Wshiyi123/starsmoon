@@ -78,10 +78,11 @@
         <div class="lyrics" id="lyrics"></div>
     </div>
     <div class="button-container">
-        <button id="play-pause-btn">播放</button>
+        <button id="play-pause-btn">停止</button>
     </div>
-    <audio id="audio">
-        <source src=""C:\Users\25877\Desktop\1741922612675My Dear-张洢豪-ringtone.mp3"" type="audio/mpeg">
+    <!-- 这里可以替换成自己的音乐，将 src 属性的值修改为你的音乐文件路径 -->
+    <audio id="audio" autoplay>
+        <source src=""C:\Users\25877\Desktop\audio\1741922612675My Dear-张洢豪-ringtone.mp3"" type="audio/mpeg">
         你的浏览器不支持音频播放。
     </audio>
     <script>
@@ -120,6 +121,9 @@
                 }
             });
         });
+
+        // 页面加载时自动开始动画
+        cdCover.style.animationPlayState = 'running';
 
         playPauseBtn.addEventListener('click', function () {
             if (audio.paused) {
