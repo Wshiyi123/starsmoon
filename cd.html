@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>那些年 - CD封面与歌词</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .cd-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .cd-cover {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-image: url('https://www.bing.com/images/search?view=detailV2&ccid=3nIwE0O8&id=FC0A0DF8374B61C29EDA08754927B7934A071B4C&thid=OIP.3nIwE0O8-R3gu-W6R2wIygHaE7&mediaurl=https%3A%2F%2Fwww.niusnews.com%2Fupload%2Fimgs%2Fdefault%2F2021Mar_M%2F0322%2F3.jpeg&exph=1365&expw=2048&q=%E9%82%A3%E4%BA%9B%E5%B9%B4&simid=607994197113909877&FORM=IRPRST&ck=0E78A432973CCCCDBC458F9E03EC3B9D&selectedIndex=0&itb=0&cw=1145&ch=607&ajaxhist=0&ajaxserp=0');
+            background-size: cover;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .lyrics {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        audio {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cd-container">
+        <div class="cd-cover"></div>
+    </div>
+    <div class="lyrics" id="lyrics">
+        <!-- 这里填写歌词 -->
+    </div>
+    <audio id="audio" controls>
+        <source src="https://file-examples.com/storage/fe8577dc39c7916c9672dc0/2017/11/file_example_MP3_700KB.mp3" type="audio/mpeg">
+        你的浏览器不支持音频播放。
+    </audio>
+    <script>
+        const lyrics = [
+            { time: 0, text: "又回到最初的起点" },
+            { time: 3, text: "记忆中你青涩的脸" },
+            { time: 6, text: "我们终于来到了这一天" },
+            { time: 9, text: "桌垫下的老照片" },
+            { time: 12, text: "无数回忆连结" },
+            { time: 15, text: "今天男孩要赴女孩最后的约" }
+        ];
+
+        const audio = document.getElementById('audio');
+        const lyricsElement = document.getElementById('lyrics');
+
+        audio.addEventListener('timeupdate', function () {
+            const currentTime = audio.currentTime;
+            for (let i = 0; i < lyrics.length; i++) {
+                if (i === lyrics.length - 1 || (currentTime >= lyrics[i].time && currentTime < lyrics[i + 1].time)) {
+                    lyricsElement.textContent = lyrics[i].text;
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>    
