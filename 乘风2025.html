@@ -20,11 +20,36 @@
       margin-bottom: 30px;
     }
 
+    /* 视频容器样式 */
+    .video-container {
+      max-width: 800px;
+      margin: 0 auto 40px;
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .video-title {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e91e63;
+    }
+
+    /* 图片容器样式 */
     .image-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -35,25 +60,63 @@
       padding: 15px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
+      width: 350px;
     }
 
     .image-card img {
-      width: 100%;
-      max-width: 300px;
-      height: auto;
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
       border-radius: 5px;
+      display: block;
+      margin: 0 auto;
     }
 
     .image-card p {
-      margin-top: 10px;
+      margin-top: 15px;
       font-weight: bold;
       color: #e91e63;
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .video-container iframe {
+        height: 250px;
+      }
+      
+      .image-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+      
+      .image-card {
+        width: 90%;
+      }
+      
+      .image-card img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+      }
     }
   </style>
 </head>
 
 <body>
   <h1>乘风2025初舞台</h1>
+  
+  <!-- 新增的B站视频部分 -->
+  <div class="video-container">
+    <iframe src="//player.bilibili.com/player.html?bvid=BV1E4oeYkEiD&page=1" 
+            scrolling="no" 
+            frameborder="no" 
+            allowfullscreen="true">
+    </iframe>
+    <p class="video-title">《乘风2025》初舞台精彩集锦</p>
+  </div>
+  
+
   <div class="image-container">
     <div class="image-card">
       <img src="弹幕高频词云图.png" alt="弹幕高频词云图">
