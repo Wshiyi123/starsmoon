@@ -8,27 +8,46 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #fce4ec; /* 浅粉色背景 */
+      background-color: #fce4ec;
       color: #333;
+      margin: 0;
+      padding: 20px;
     }
 
     h1 {
       text-align: center;
-      color: #e91e63; /* 粉色系标题颜色 */
+      color: #e91e63;
+      margin-bottom: 30px;
     }
 
     .image-container {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    img {
-      width: 300px; /* 图片宽度，可根据需要调整 */
+    .image-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .image-card img {
+      width: 100%;
+      max-width: 300px;
       height: auto;
-      margin: 10px;
       border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-card p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #e91e63;
     }
   </style>
 </head>
@@ -36,9 +55,20 @@
 <body>
   <h1>乘风2025初舞台</h1>
   <div class="image-container">
-    <img src="E:\2025计算传播\LAB-实操1\内娱\浪姐6\弹幕高频词云图.png"alt="弹幕高频词云图">
-    <img src="C:\Users\25877\Desktop\R-C.jpg" alt="乘风2025">
-    <img src="E:\2025计算传播\LAB-实操1\内娱\浪姐6\弹幕高频词柱状图.png" alt="弹幕高频词Top30柱状图">
+    <div class="image-card">
+      <img src="弹幕高频词云图.png" alt="弹幕高频词云图">
+      <p>弹幕高频词云图</p>
+    </div>
+    
+    <div class="image-card">
+      <img src="乘风2025海报.jpg" alt="乘风2025">
+      <p>乘风2025海报</p>
+    </div>
+    
+    <div class="image-card">
+      <img src="弹幕高频词柱状图.png" alt="弹幕高频词Top30柱状图">
+      <p>弹幕高频词Top30柱状图</p>
+    </div>
   </div>
 </body>
 
